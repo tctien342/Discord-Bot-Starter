@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p= about
+  h4 Server info:
+  p Server name: <strong>#{name}</strong>
+  p Server API version: <strong>#{version}</strong>
+  br
+  h4 Dependencies info:
+  p ExpressJS version: <strong>#{expressVersion}</strong>
+  p Pug version: <strong>#{pugVersion}</strong>

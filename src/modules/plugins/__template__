@@ -1,0 +1,35 @@
+import { Message } from 'discord.js';
+import { SourcesLib } from '../discord/services';
+import { CommandConf } from '.';
+/**
+ * Support lib for DiscordBOT
+ */
+let lib: SourcesLib;
+
+export const TEMP_CONF: CommandConf = {
+    // Prefix to call this plugin
+    prefix: [''],
+    // About this plugin
+    note: '',
+    // Binding support lib
+    setup: (slib: SourcesLib) => (lib = slib),
+    // Array of support commands
+    commands: [
+        {
+            // prefix of command, command default will be called when call plugin without command prefix
+            command: ['default'],
+            // About command
+            note: '',
+            // Array of string how to use it!
+            usage: [''],
+            /**
+             * Exec function when command is calling
+             * + 'input' is input value after remove all prefix command
+             * + 'msg' is raw message from discord
+             * + return true to tell discord that exec success
+             * + return false to show help of command
+             */
+            message: async (input: string, msg: Message) => true,
+        },
+    ],
+};
